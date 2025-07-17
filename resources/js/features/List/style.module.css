@@ -1,0 +1,40 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid hsl(0deg 0% 90%);
+
+  &:hover {
+    background: hsl(0deg 0% 98%);
+  }
+}
+
+.item p {
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.item p.completed {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.buttonWrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 12px;
+}

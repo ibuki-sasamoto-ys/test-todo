@@ -1,0 +1,21 @@
+.appWrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px hsla(210deg, 80%, 10%, 0.1);
+  padding: 32px;
+  width: 100%;
+  min-width: 480px;
+  border: 1px solid hsl(0deg 0% 90%);
+}
+
+.appWrapper h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: hsl(210deg 10% 20%);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.errorMessage{
+  color: #f00;
+}
