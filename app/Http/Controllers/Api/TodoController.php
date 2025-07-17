@@ -20,7 +20,13 @@ class TodoController extends Controller
             'complete_status' => $request->input('complete_status', false),
         ]);
     
-        return response()->json($todo, 201);
+        return response()->json($todo);
+    }
+
+    public function update(Request $request, Todo $todo)
+    {
+        $todo->update($request->only(['text', 'complete_status']));
+        return response()->json($todo);
     }
 
 }
