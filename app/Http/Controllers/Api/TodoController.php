@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class TodoController extends Controller
 {
@@ -19,6 +20,8 @@ class TodoController extends Controller
             'text' => $request->input('text'),
             'complete_status' => $request->input('complete_status', false),
         ]);
+
+        Log::info('ToDoが作成されました。');
     
         return response()->json($todo);
     }
@@ -27,6 +30,12 @@ class TodoController extends Controller
     {
         $todo->update($request->only(['text', 'complete_status']));
         return response()->json($todo);
+    }
+
+    public function destroy(Todo $todo)
+    {
+        $todo->delete();
+        return response()->json(null , 204);
     }
 
 }
